@@ -3,75 +3,229 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Aunt BB 💛</title>
+
+<title>Dear BB 💙</title>
 
 <style>
+
 body{
-margin:0;
-font-family:Georgia, serif;
-background:linear-gradient(#fffaf0,#fdeedc);
-display:flex;
-justify-content:center;
-align-items:center;
-height:100vh;
-text-align:center;
+    margin:0;
+    height:100vh;
+    background:linear-gradient(#d9ecf5,#b9d7e8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-family:"Georgia", serif;
 }
 
-.card{
-background:white;
-padding:50px;
-border-radius:25px;
-box-shadow:0 10px 30px rgba(0,0,0,.15);
-max-width:600px;
+/* หน้าปกสมุด */
+.diary{
+    width:350px;
+    height:500px;
+    perspective:1000px;
 }
 
-h1{
-color:#9c6b30;
-font-size:50px;
-margin-bottom:10px;
+.cover{
+    width:100%;
+    height:100%;
+    background:#8fb8d6;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    position:relative;
+    overflow:hidden;
 }
 
-h2{
-color:#555;
-font-weight:normal;
+/* texture กระดาษ */
+.cover:before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(255,255,255,.12);
 }
 
+.title{
+    position:relative;
+    text-align:center;
+    z-index:2;
+}
+
+.title h1{
+    font-size:45px;
+    margin:10px;
+}
+
+.title p{
+    font-size:20px;
+}
+
+/* กิ๊ปหนีบ */
+.clip{
+    position:absolute;
+    top:20px;
+    width:80px;
+    height:20px;
+    background:#d8c18a;
+    border-radius:10px;
+    transform:rotate(-5deg);
+}
+
+
+/* ปุ่มเปิด */
 button{
-margin-top:30px;
-padding:15px 35px;
-font-size:20px;
-border:none;
-border-radius:30px;
-background:#d9a441;
-color:white;
-cursor:pointer;
+    margin-top:40px;
+    padding:14px 35px;
+    border:none;
+    border-radius:30px;
+    background:#fff4d6;
+    color:#567;
+    font-size:18px;
+    cursor:pointer;
+    z-index:3;
 }
 
 button:hover{
-transform:scale(1.05);
+    transform:scale(1.05);
 }
+
+
+/* หน้าด้านใน */
+
+.page{
+    display:none;
+    background:#fff7e8;
+    width:330px;
+    min-height:430px;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+    text-align:center;
+}
+
+.page h1{
+    color:#6d8fa8;
+}
+
+.page p{
+    line-height:1.8;
+    color:#555;
+    font-size:17px;
+}
+
+
+/* stickers */
+
+.sticker{
+    font-size:30px;
+}
+
 
 </style>
 
 </head>
 
+
 <body>
 
-<div class="card">
 
-<h1>For Aunt BB 💛</h1>
+<div class="diary">
 
-<h2>Happy Birthday</h2>
+<!-- ปก -->
+
+<div class="cover" id="cover">
+
+<div class="clip"></div>
+
+<div class="title">
+
+<h1>Dear BB 💙</h1>
 
 <p>
-This diary was made with love.
+A little diary<br>
+from<br>
+KwanKhao (ขวัญข้าว)
 </p>
 
-<button onclick="alert('Welcome to your birthday diary 💛')">
-Open Diary
+<div class="sticker">
+🌷 ✨ 💙
+</div>
+
+<button onclick="openDiary()">
+Open Diary 📖
 </button>
 
 </div>
+
+</div>
+
+
+
+<!-- หน้าอวยพร -->
+
+<div class="page" id="page">
+
+<div class="sticker">
+💌 🌸
+</div>
+
+<h1>
+Happy Birthday Aunt BB 🎂
+</h1>
+
+
+<p>
+
+Dear Aunt BB 💙
+
+<br><br>
+
+Thank you for bringing happiness,
+love, and beautiful memories to our family.
+
+<br><br>
+
+I hope your birthday is filled with
+smiles, love, and wonderful moments.
+
+<br><br>
+
+สุขสันต์วันเกิดนะคะป้าบีบี 💛  
+ขอให้ป้ามีความสุขมาก ๆ  
+มีรอยยิ้มในทุกวันนะคะ
+
+<br><br>
+
+With love,
+
+<br>
+
+KwanKhao (ขวัญข้าว)
+
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+function openDiary(){
+
+document.getElementById("cover").style.display="none";
+
+document.getElementById("page").style.display="block";
+
+}
+
+</script>
+
 
 </body>
 </html>
